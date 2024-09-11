@@ -7,6 +7,8 @@
 ## Задача 1
 
 Вывести отсортированный в алфавитном порядке список имен пользователей в файле passwd (вам понадобится grep).
+![image](https://github.com/user-attachments/assets/9a3b40db-9ca8-4533-a5e0-1b64e943c004)
+
 
 ## Задача 2
 
@@ -20,6 +22,8 @@
 139 hip
 138 manet
 ```
+![image](https://github.com/user-attachments/assets/2dc7c7f6-29e1-4c18-a2b9-9f45c4385423)
+
 
 ## Задача 3
 
@@ -31,6 +35,9 @@
 | Hello from RTU MIREA! |
 +-----------------------+
 ```
+
+![image](https://github.com/user-attachments/assets/9dbbf299-d6ae-43e2-a0df-c8ba2e11f2da)
+
 
 Перед отправкой решения проверьте его в ShellCheck на предупреждения.
 
