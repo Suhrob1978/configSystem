@@ -50,6 +50,7 @@
 ```
 h hello include int main n printf return stdio void world
 ```
+![image](https://github.com/user-attachments/assets/2c127199-9f08-48ac-96a6-c96ff5ede92d)
 
 ## Задача 5
 
