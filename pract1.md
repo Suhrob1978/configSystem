@@ -64,6 +64,9 @@ h hello include int main n printf return stdio void world
 
 В результате для banner задаются правильные права доступа и сам banner копируется в /usr/local/bin.
 
+![image](https://github.com/user-attachments/assets/0830b8fd-29cc-43a7-9550-c3fe4027395d)
+
+
 ## Задача 6
 
 Написать программу для проверки наличия комментария в первой строке файлов с расширением c, js и py.
