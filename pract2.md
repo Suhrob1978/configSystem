@@ -40,6 +40,9 @@
 
 Решить на MiniZinc задачу о зависимостях пакетов для рисунка, приведенного ниже.
 
+![image](https://github.com/user-attachments/assets/40c50ab9-6f3c-4622-aa67-097f2c66c245)
+
+
 ![](images/pubgrub.png)
 
 ## Задача 6
@@ -55,7 +58,11 @@ right 1.0.0 зависит от shared <2.0.0.
 shared 2.0.0 не имеет зависимостей.
 shared 1.0.0 зависит от target ^1.0.0.
 target 2.0.0 и 1.0.0 не имеют зависимостей.
+
 ```
+
+![image](https://github.com/user-attachments/assets/d6d23597-f4dd-4ce9-ba16-d3ad81c865e0)
+
 
 ## Задача 7
 
