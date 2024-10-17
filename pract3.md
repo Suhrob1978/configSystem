@@ -9,37 +9,31 @@
 Реализовать на Jsonnet приведенный ниже пример в формате JSON. Использовать в реализации свойство программируемости и принцип DRY.
 
 ```
+local groupTemplate(index) = "ИКБО-" + index + "-20";
+
+local groups = [groupTemplate(i) for i in std.range(1, 24)];
+
+local studentTemplate(name, age, group) = {
+  age: age,
+  group: group,
+  name: name,
+};
+
+local students = [
+  studentTemplate("Троецкий Т.Т.", 19, "ИКБО-4-20"),
+  studentTemplate("Павлов П.П.", 18, "ИКБО-5-20"),
+  studentTemplate("Сокол С.С.", 18, "ИКБО-5-20"),
+  studentTemplate("Хайдаров С.Р.", 19, "ИКБО-65-23"),
+];
+
 {
-  // Функция для генерации списка групп
-  groupNames: [std.format("ИКБО-%d-20", i) for i in std.range(1, 24)],
-
-  // Функция для создания студента
-  student: function(name, age, group) {
-    {
-      "name": name,
-      "age": age,
-      "group": group
-    }
-  },
-
-  // Основная структура
-  groups: self.groupNames,
-
-  students: [
-    self.student("Иванов И.И.", 19, "ИКБО-4-20"),
-    self.student("Петров П.П.", 18, "ИКБО-5-20"),
-    self.student("Сидоров С.С.", 18, "ИКБО-5-20"),
-    self.student("Кузнецов А.А.", 20, "ИКБО-6-20")  // Ваши данные
-  ],
-
-  subject: "Конфигурационное управление"
+  groups: groups,
+  students: students,
+  subject: "Конфигурационное управление",
 }
 
+
 ```
-
-## Задача 2
-
-Реализовать на Dhall приведенный ниже пример в формате JSON. Использовать в реализации свойство программируемости и принцип DRY.
 
 ```
 {
@@ -73,23 +67,126 @@
     {
       "age": 19,
       "group": "ИКБО-4-20",
-      "name": "Иванов И.И."
+      "name": "Троецкий Т.Т."
     },
     {
       "age": 18,
       "group": "ИКБО-5-20",
-      "name": "Петров П.П."
+      "name": "Павлов П.П."
     },
     {
       "age": 18,
       "group": "ИКБО-5-20",
-      "name": "Сидоров С.С."
+      "name": "Сокол С.С."
     },
-    <добавьте ваши данные в качестве четвертого студента>
+    {
+      "age": 19,
+      "group": "ИКБО-65-23",
+      "name": "Хайдаров С.Р."
+    }
   ],
   "subject": "Конфигурационное управление"
-} 
+}
 ```
+
+![image](https://github.com/user-attachments/assets/eb8966dc-b54c-42c2-9189-ab78e5b1f1bc)
+
+
+## Задача 2
+
+Реализовать на Dhall приведенный ниже пример в формате JSON. Использовать в реализации свойство программируемости и принцип DRY.
+
+
+```
+let Group = List Text
+
+let Student = { age : Natural, group : Text, name : Text }
+
+let groups : Group =
+      [ "ИКБО-1-20"
+      , "ИКБО-2-20"
+      , "ИКБО-3-20"
+      , "ИКБО-4-20"
+      , "ИКБО-5-20"
+      , "ИКБО-6-20"
+      , "ИКБО-7-20"
+      , "ИКБО-8-20"
+      , "ИКБО-9-20"
+      , "ИКБО-10-20"
+      , "ИКБО-11-20"
+      , "ИКБО-12-20"
+      , "ИКБО-13-20"
+      , "ИКБО-14-20"
+      , "ИКБО-15-20"
+      , "ИКБО-16-20"
+      , "ИКБО-17-20"
+      , "ИКБО-18-20"
+      , "ИКБО-19-20"
+      , "ИКБО-20-20"
+      , "ИКБО-21-20"
+      , "ИКБО-22-20"
+      , "ИКБО-23-20"
+      , "ИКБО-24-20"
+      ]
+
+let students : List Student =
+    [ { age = 19, group = "ИКБО-4-20", name = "Троецкий Т.Т." }
+    , { age = 18, group = "ИКБО-5-20", name = "Павлов П.П." }
+    , { age = 18, group = "ИКБО-5-20", name = "Сокол С.С." }
+    , { age = 19, group = "ИКБО-65-23", name = "Хайдаров С.Р." }
+    ]
+
+in
+  { groups = groups
+  , students = students
+  , subject = "Конфигурационное управление"
+  }
+```
+
+```
+groups:
+  - "ИКБО-1-20"
+  - "ИКБО-2-20"
+  - "ИКБО-3-20"
+  - "ИКБО-4-20"
+  - "ИКБО-5-20"
+  - "ИКБО-6-20"
+  - "ИКБО-7-20"
+  - "ИКБО-8-20"
+  - "ИКБО-9-20"
+  - "ИКБО-10-20"
+  - "ИКБО-11-20"
+  - "ИКБО-12-20"
+  - "ИКБО-13-20"
+  - "ИКБО-14-20"
+  - "ИКБО-15-20"
+  - "ИКБО-16-20"
+  - "ИКБО-17-20"
+  - "ИКБО-18-20"
+  - "ИКБО-19-20"
+  - "ИКБО-20-20"
+  - "ИКБО-21-20"
+  - "ИКБО-22-20"
+  - "ИКБО-23-20"
+  - "ИКБО-24-20"
+students:
+  - age: 19
+    group: "ИКБО-4-20"
+    name: "Троецкий Т.Т."
+  - age: 18
+    group: "ИКБО-5-20"
+    name: "Павлов П.П."
+  - age: 18
+    group: "ИКБО-5-20"
+    name: "Сокол С.С."
+  - age: 19
+    group: "ИКБО-65-23"
+    name: "Хайдаров С.Р."
+subject: "Конфигурационное управление"
+
+```
+
+
 
 Для решения дальнейших задач потребуется программа на Питоне, представленная ниже. Разбираться в самом языке Питон при этом необязательно.
 
@@ -141,6 +238,48 @@ for i in range(10):
 000
 ```
 
+```
+import random
+
+
+def parse_bnf(text):
+    '''
+    Преобразовать текстовую запись БНФ в словарь.
+    '''
+    grammar = {}
+    rules = [line.split('=') for line in text.strip().split('\n')]
+    for name, body in rules:
+        grammar[name.strip()] = [alt.split() for alt in body.split('|')]
+    return grammar
+
+
+def generate_phrase(grammar, start):
+    '''
+    Сгенерировать случайную фразу.
+    '''
+    if start in grammar:
+        seq = random.choice(grammar[start])
+        return ''.join([generate_phrase(grammar, name) for name in seq])
+    return str(start)
+
+
+BNF = '''
+S = A | B | C | D | E
+A = 1 | 1 A | 1 B
+B = 0 | 0 B
+C = 1 1
+D = 1 0 1 1 0 1
+E = 0 0 0
+'''
+
+for i in range(10):
+    print(generate_phrase(parse_bnf(BNF), 'S'))
+
+
+
+```
+![image](https://github.com/user-attachments/assets/7c106097-6cdd-444f-b981-3c9ed5793096)
+
 ## Задача 4
 
 Язык правильно расставленных скобок двух видов.
@@ -153,6 +292,21 @@ for i in range(10):
 {}
 ```
 
+```
+BNF = '''
+S = A | B | C
+A = ( S ) | { S } | ε
+B = ( A ) | { A }
+C = ε
+'''
+
+for i in range(10):
+    print(generate_phrase(parse_bnf(BNF), 'S'))
+```
+
+![image](https://github.com/user-attachments/assets/c69b8aab-23ef-4295-857d-df05a42c5e02)
+
+
 ## Задача 5
 
 Язык выражений алгебры логики.
@@ -164,6 +318,21 @@ y & ~(y)
 ~x
 ~((x) & y | (y) | (x)) & x | x | (y & ~y)
 ```
+
+```
+BNF = '''
+S = E
+E = E & T | E | T
+T = T | F | ~T | ( E )
+F = x | y
+'''
+
+for i in range(10):
+    print(generate_phrase(parse_bnf(BNF), 'S'))
+```
+
+![image](https://github.com/user-attachments/assets/9e22255f-d405-43e2-8b0d-ab84d3a0caa4)
+
 
 ## Полезные ссылки
 
