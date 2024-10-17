@@ -185,6 +185,10 @@ students:
 subject: "Конфигурационное управление"
 
 ```
+![image](https://github.com/user-attachments/assets/55b70ce0-92ac-4c6f-9dea-183329ec309a)
+
+![image](https://github.com/user-attachments/assets/a76444ce-8977-46e3-be8c-8a799fcbaa45)
+
 
 
 
