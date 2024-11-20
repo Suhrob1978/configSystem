@@ -11,6 +11,27 @@
 ![image](https://github.com/user-attachments/assets/ab2cce39-2221-41fe-8826-d82bffc38004)
 
 
+```
+git commit
+git tag in
+git branch first
+git branch second
+git commit
+git commit
+git checkout first
+git commit
+git commit
+git checkout master
+git merge first
+git checkout second
+git commit
+git commit
+git rebase master
+git checkout master
+git merge second
+git checkout in
+```
+
 ## Задача 2
 
 Создать локальный git-репозиторий. Задать свои имя и почту (далее – coder1). Разместить файл prog.py с какими-нибудь данными. Прислать в текстовом виде диалог с git.
